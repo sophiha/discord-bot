@@ -1,0 +1,45 @@
+{
+  "name": "discord-bot",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --enable-source-maps .",
+    "build": "swc src --out-dir dist --strip-leading-paths",
+    "test:types": "tsc --noEmit",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@statsify/assets": "workspace:^",
+    "@statsify/discord": "workspace:^",
+    "@statsify/logger": "workspace:^",
+    "@statsify/rendering": "workspace:^",
+    "@statsify/util": "workspace:^",
+    "@swc/helpers": "^0.5.12",
+    "discord-api-types": "^0.38.22",
+    "reflect-metadata": "^0.2.2",
+    "skia-canvas": "https://github.com/samizdatco/skia-canvas/releases/download/v0.9.30/skia-canvas-v0.9.30-linux-x64-glibc.tar.gz",
+    "tiny-discord": "https://github.com/timotejroiko/tiny-discord.git#f6d020085ea88e33ebaf6ce323930deffe74fb0d",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {},
+  "imports": {
+    "#components": {
+      "types": "./src/components/index.ts",
+      "default": "./dist/components/index.js"
+    },
+    "#services": {
+      "types": "./src/services/index.ts",
+      "default": "./dist/services/index.js"
+    },
+    "#themes": {
+      "types": "./src/themes/index.ts",
+      "default": "./dist/themes/index.js"
+    },
+    "#lib/*": {
+      "types": "./src/lib/*.ts",
+      "default": "./dist/lib/*.js"
+    }
+  }
+}
